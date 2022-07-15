@@ -5,6 +5,7 @@ import Favorites from './components/Favorites'
 import MobileApp from './components/MobileApp'
 import Cards from './components/Cards'
 import Footer from './components/Footer'
+import Campaigns from './components/Campaigns'
 
 const App = () => {
   return (
@@ -12,9 +13,12 @@ const App = () => {
       <Header />
       <HeroSection />
       <Categories />
-      <Favorites />
-      <MobileApp />
-      <Cards />
+      <Campaigns />
+      <div className='container mx-auto'>
+          <Favorites />
+          <MobileApp />
+          <Cards />
+      </div>
       <Footer />
     </div>
   )

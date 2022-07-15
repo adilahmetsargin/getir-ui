@@ -10,6 +10,9 @@ module.exports = {
         'secondary-brand-color': '#7849f7',
         'brand-yellow': '#ffd300'
       },
+      spacing: {
+        '0.1' : '0.063rem'
+      }
     },
   },
   plugins: [],
