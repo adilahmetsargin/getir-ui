@@ -42,7 +42,7 @@ const PrevButton=({onClick})=>{
     <div className='container mx-auto py-8'>
       <Title>Kampanyalar</Title>
         <Slider {...settings} className='-mx-2' >
-        {banners.length && banners.map((banner, index)=>(
+        {banners.length && banners.map((banner)=>(
           <div key={banner.id}>
             <picture className='block px-2'>
               <img src={banner.image} alt="banner-logo" className='rounded' />
