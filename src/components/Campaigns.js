@@ -10,6 +10,8 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 const Campaigns = () => {
   const [banners, setBanners] = useState([])
 
+
+
   useEffect(() => {
     setBanners(Banners)
   }, [])
@@ -24,7 +26,7 @@ const PrevButton=({onClick})=>{
   let settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     arrows: true,
     slidesToScroll: 1,
     autoplay: true,
@@ -32,20 +34,46 @@ const PrevButton=({onClick})=>{
     autoplaySpeed: 3500,
     cssEase: 'linear',
     nextArrow: <NextButton />,
-    prevArrow: <PrevButton />
+    prevArrow: <PrevButton />,
+    responsive:[
+      {
+        breakpoint: 1280,
+        settings:{
+          slidesToShow: 3, 
+          arrows:false,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings:{
+          slidesToShow: 2, 
+          arrows:false,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings:{
+          slidesToShow: 1, 
+          arrows:false,
+        }
+      }
+    ]
   };
 
  
 
 
   return (
-    <div className='container mx-auto py-8'>
+    <div className='container mx-auto md:pt-8'>
+        <div className='hidden md:block'>
       <Title>Kampanyalar</Title>
-        <Slider {...settings} className='-mx-2' >
+
+        </div>
+        <Slider {...settings} className='md:-mx-2' >
         {banners.length && banners.map((banner)=>(
           <div key={banner.id}>
-            <picture className='block px-2'>
-              <img src={banner.image} alt="banner-logo" className='rounded' />
+            <picture className='block md:px-2'>
+              <img src={banner.image} alt="banner-logo" className='md:rounded' />
             </picture>
           </div>
         ))}
